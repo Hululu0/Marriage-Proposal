@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #333;
+        }
+        .button-container {
+            margin-top: 50px;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+        }
+        #yes-btn {
+            background-color: #28a745;
+            color: white;
+        }
+        #no-btn {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will You Marry Me?</h1>
+
+    <div class="button-container">
+        <button id="yes-btn" class="btn" onclick="yesClicked()">Yes</button>
+        <button id="no-btn" class="btn" onmouseover="moveNoButton()">No</button>
+    </div>
+
+    <script>
+        // Function to make the "No" button move
+        function moveNoButton() {
+            const noBtn = document.getElementById("no-btn");
+            const randomX = Math.random() * window.innerWidth - 100; // Random X position
+            const randomY = Math.random() * window.innerHeight - 100; // Random Y position
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+        }
+
+        // Redirect to the second page when "Yes" is clicked
+        function yesClicked() {
+            window.location.href = "thankyou.html";
+        }
+    </script>
+
+</body>
+</html>
